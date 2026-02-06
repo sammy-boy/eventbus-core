@@ -1,13 +1,13 @@
 <?php
 
-namespace Uzapoint\EventBus\Console;
+namespace SammyBoy\EventBus\Console;
 
 use Throwable;
 use PhpAmqpLib\Wire\AMQPTable;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Log;
 use PhpAmqpLib\Message\AMQPMessage;
-use Uzapoint\EventBus\EventProcessor;
+use SammyBoy\EventBus\EventProcessor;
 use PhpAmqpLib\Exchange\AMQPExchangeType;
 use PhpAmqpLib\Connection\AMQPStreamConnection;
 

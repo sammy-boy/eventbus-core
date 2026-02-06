@@ -1,12 +1,12 @@
 # 
 
 Repository:
-[https://github.com/uzapoint/eventbus-core](https://github.com/uzapoint/eventbus-core)
+[https://github.com/sammy-boy/eventbus-core](https://github.com/sammy-boy/eventbus-core)
 
 ---
 
 ````markdown
-# Uzapoint EventBus Core
+# SammyBoy EventBus Core
 
 Reusable, opinionated Event Bus infrastructure for Laravel microservices.
 
@@ -30,7 +30,7 @@ Built for scalable, event-driven architectures using RabbitMQ and Redis-backed i
 ## Installation
 
 ```bash
-composer require uzapoint/eventbus-core
+composer require sammy-boy/eventbus-core
 ````
 
 ---
@@ -75,7 +75,7 @@ return [
 ## Publishing Events
 
 ```php
-use Uzapoint\EventBus\RabbitMQService;
+use SammyBoy\EventBus\RabbitMQService;
 
 $eventBus->publish(
     exchange: 'business.events',
@@ -188,5 +188,5 @@ MIT
 ## Author
 
 Sammy Orondo
-Lead Developer — Uzapoint
+Lead Developer — SammyBoy
 [https://github.com/sammy-boy](https://github.com/sammy-boy)
