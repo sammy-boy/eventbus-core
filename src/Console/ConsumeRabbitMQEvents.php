@@ -33,7 +33,7 @@ class ConsumeRabbitMQEvents extends Command
      */
     public function handle(): void
     {
-        $this->info('🚀 Starting EventBus Consumer...');
+        $this->info('Starting EventBus Consumer...');
 
         $this->connect();
         $this->declareExchanges();
@@ -70,10 +70,10 @@ class ConsumeRabbitMQEvents extends Command
             $prefetch = config('eventbus.consumer.prefetch_count', 1);
             $this->channel->basic_qos(null, $prefetch, null);
 
-            $this->info('✅ Connected to RabbitMQ');
+            $this->info('Connected to RabbitMQ');
 
         } catch (Throwable $e) {
-            $this->error('❌ Failed to connect to RabbitMQ');
+            $this->error('Failed to connect to RabbitMQ');
             Log::critical('[EventBus] Connection failed', [
                 'error' => $e->getMessage(),
             ]);
@@ -116,10 +116,8 @@ class ConsumeRabbitMQEvents extends Command
                 $dlxPrefix = config('eventbus.dead_letter.exchange_prefix', 'dlx.');
 
                 $arguments = new AMQPTable([
-                    'x-dead-letter-exchange' =>
-                        $dlxPrefix . $queueConfig['exchange'],
-                    'x-message-ttl' =>
-                        config('eventbus.dead_letter.ttl', 86400000),
+                    'x-dead-letter-exchange' => $dlxPrefix . $queueConfig['exchange'],
+                    'x-message-ttl' => config('eventbus.dead_letter.ttl', 86400000),
                 ]);
             }
 
@@ -189,7 +187,7 @@ class ConsumeRabbitMQEvents extends Command
                 }
             );
 
-            $this->info("📥 Consuming from queue: {$queue}");
+            $this->info("Consuming from queue: {$queue}");
         }
 
         while ($this->channel->is_consuming()) {
@@ -226,7 +224,7 @@ class ConsumeRabbitMQEvents extends Command
             $this->channel?->close();
             $this->connection?->close();
 
-            $this->info('🛑 EventBus consumer stopped gracefully.');
+            $this->info('EventBus consumer stopped gracefully.');
 
         } catch (Throwable $e) {
 
