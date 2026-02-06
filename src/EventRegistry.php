@@ -1,6 +1,6 @@
 <?php
 
-namespace Company\EventBus;
+namespace SammyBoy\EventBus;
 
 class EventRegistry
 {

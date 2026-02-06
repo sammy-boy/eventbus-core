@@ -1,9 +1,9 @@
 <?php
 
-namespace Company\EventBus;
+namespace SammyBoy\EventBus;
 
 use Illuminate\Support\ServiceProvider;
-use Company\EventBus\Console\ConsumeRabbitMQEvents;
+use SammyBoy\EventBus\Console\ConsumeRabbitMQEvents;
 
 class EventBusServiceProvider extends ServiceProvider
 {

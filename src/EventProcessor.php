@@ -1,6 +1,6 @@
 <?php
 
-namespace Company\EventBus;
+namespace SammyBoy\EventBus;
 
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Redis;
